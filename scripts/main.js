@@ -18,53 +18,81 @@
 let matchNumber = 0;
 let score = 0;
 
-function rockPaperScissors(){
+function showRules() {
+    alert("Rules:\n \n- Rock beats Scissors \n- Paper beats Rock \n- Scissors beats Paper");
+    alert("You will play against the computer")
+}
+
+function checkValidOption(option) {
+    if (option != null || option != undefined) {
+        option = option.toLowerCase()
+        if (option == "1" || option == "2" || option == "3" || option == "rock" || option == "paper" || option == "scissors") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
+function showComputerOption(computerOption, optionsArray) {
+    alert("Computer choosed " + optionsArray[computerOption - 1]);
+}
+
+function showWinLoseDraw(option, computerOption) {
+    if (option == "1" || option == "rock") {
+        if (computerOption == 2) {
+            alert("Oh no, you lose.")
+        }
+        else if (computerOption == 3) {
+            alert("Yay! You won!")
+        }
+        else {
+            alert("It's a draw")
+        }
+    }
+    else if (option == "2" || option == "paper") {
+        if (computerOption == 1) {
+            alert("Yay! You won!")
+        }
+        else if (computerOption == 3) {
+            alert("Oh no, you lose.")
+        }
+        else {
+            alert("It's a draw")
+        }
+    }
+    else {
+        if (computerOption == 1) {
+            alert("Oh no, you lose.")
+        }
+        else if (computerOption == 2) {
+            alert("Yay! You won!")
+        }
+        else {
+            alert("It's  a draw")
+        }
+    }
+}
+
+
+function rockPaperScissors() {
+    let arrayOptions = ["Rock", "Paper", "Scissors"];
     alert("This is the Game Rock Papers Scissors");
-    if(confirm("Do you wanna play?")){
-        alert("Rules:\n \n- Rock beats Scissors \n- Paper beats Rock \n- Scissors beats paper");
-        alert("You will play against the computer")
-        let option = prompt("Chosse your option (no matter capitalization): \n- 1 or \"Rock\" to Rock \n- 2 or \"Paper\" to Paper \n- 3 or \"Scissors\" to Scissors").toLowerCase();
-        
-        if(option == "1" || option == "2" || option == "3" || option == "rock" || option == "paper" || option == "scissors"){
+    if (confirm("Do you wanna play?")) {
+        showRules();
+        let option = prompt("Choose your option (no matter capitalization): \n- 1 or \"Rock\" to Rock \n- 2 or \"Paper\" to Paper \n- 3 or \"Scissors\" to Scissors");
+
+        if (checkValidOption(option)) {
 
             let computerOption = parseInt((Math.random() * 2).toFixed(0)) + 1;
+            
+            showComputerOption(computerOption, arrayOptions);
 
-            console.log(computerOption)
-            if(option == "1" || option == "rock"){
-                if(computerOption == 2){
-                    alert("Oh no, you lose.")
-                }
-                else if(computerOption == 3){
-                    alert("Yay! You won!")
-                } 
-                else {
-                    alert("It's a draw")
-                }
-            }
-            else if(option == "2" || option == "paper"){
-                if(computerOption == 1){
-                    alert("Yay! You won!")
-                } 
-                else if(computerOption == 3){
-                    alert("Oh no, you lose.")
-                } 
-                else {
-                    alert("It's a draw")
-                }
-            } 
-            else {
-                if(computerOption == 1){
-                    alert("Oh no, you lose.")
-                } 
-                else if(computerOption == 2){
-                    alert("Yay! You won!")
-                } 
-                else{
-                    alert("It's  a draw")
-                }
-            }
-
-
+            showWinLoseDraw(option, computerOption);
         } else {
             alert("You need to enter a valid option.")
         }
