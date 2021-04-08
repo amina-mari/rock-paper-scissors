@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -9,11 +11,11 @@ body {
     justify-content: space-between;
     padding: 0;
     margin: 0;
-    font-family: monospace;
+    font-family: 'Montserrat', serif;
 }
 
 .header {
-    background-color: rgb(255, 145, 0);
+    background-color: lightseagreen;
     height: 20vh;
     display: flex;
     align-items: center;
@@ -26,7 +28,9 @@ body {
 .header__title {
     padding: 20px;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-family: 'Montserrat Alternates';
+    font-weight: 500;
 }
 
 main {
@@ -36,7 +40,10 @@ main {
 }
 
 .rules {
+    width: 50%;
     text-align: center;
+    background-color:rgb(255, 215, 163);
+    border-radius: 10px;
 }
 
 .rules__list {
@@ -67,11 +74,13 @@ main {
     outline: none;
     background-color:rgb(255, 215, 163);
     transition: all 0.4s;
+    font-weight: 500;
 }
 
 .game__button:hover {
     cursor: pointer;
-    border-color: forestgreen ;
+    border-color: rgb(75, 75, 75) ;
+    background-color: rgb(255, 184, 92);
 }
 
 .game__button:active {
@@ -112,6 +121,7 @@ main {
 }
 
 .footer__img {
+    font-family: monospace;
     width: 25px;
     vertical-align: bottom;
 }
