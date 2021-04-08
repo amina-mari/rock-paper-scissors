@@ -4,43 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
-        <h1>Rock Paper Scissors!</h1>
+    <header class="header">
+        <h1 class="header__title">Rock Paper Scissors!</h1>
     </header>
     <main>
         <section class="rules">
-            <ul>
-                <li>Rock beats Scissors</li>
-                <li>Paper beats Rock</li>
-                <li>Scissors beats Paper</li>
+            <h2>Rules</h2>
+            <ul class="rules__list">
+                <li class="rules__item">Rock beats Scissors</li>
+                <li class="rules__item">Paper beats Rock</li>
+                <li class="rules__item">Scissors beats Paper</li>
             </ul>            
         </section>
         <section class="game">
-            <button>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption>Rock</figcaption>
+            <h2 class="game__choose">Choose:</h2>
+            <button class="game__button">
+                <figure class="game__figure">
+                    <div>
+                        <img class="game__figure--img" src="images/icons8-rock-80.png" alt="">
+                    </div>
+                    <figcaption class="game__figure--figcaption">Rock</figcaption>
                 </figure>
             </button>
-            <button>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption>Paper</figcaption>
+            <button class="game__button">
+                <figure class="game__figure">
+                    <div>
+                        <img class="game__figure--img" src="images/icons8-paper-64.png" alt="">
+                    </div>
+                    <figcaption class="game__figure--figcaption">Paper</figcaption>
                 </figure>
             </button>
-            <button>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption>Scissors</figcaption>
+            <button class="game__button">
+                <figure class="game__figure">
+                    <div>
+                        <img class="game__figure--img" src="images/icons8-cutting-96.png" alt="">
+                    </div>
+                    <figcaption class="game__figure--figcaption">Scissors</figcaption>
                 </figure>
             </button>
         </section>
     </main>
-    <footer>
-        <p>Made with <img src="" alt=""> by Mariana Amina</p>
+    <footer class="footer">
+        <p class="footer__content">Made with <img class="footer__img" src="images/icons8-heart-100.png" alt=""> by Mariana Amina</p>
     </footer>
     <script src="scripts/main.js"></script>
 </body>
