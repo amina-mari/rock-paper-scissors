@@ -53,7 +53,7 @@ main {
 }
 
 .game {
-    width: 70%;
+    width: 70%; 
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +79,7 @@ main {
 
 .game__button:hover {
     cursor: pointer;
-    border-color: rgb(75, 75, 75) ;
+    border-color: rgb(75, 75, 75);
     background-color: rgb(255, 184, 92);
 }
 
@@ -113,6 +113,72 @@ main {
 
 .game__figure--figcaption {
     font-size: 20px;
+}
+
+.game__end {
+    flex-basis: 100%;
+    margin-top: 50px;
+}
+
+.game__end--button {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    border: 5px solid rgb(119, 119, 119);
+    border-radius: 10px;
+    outline: none;
+    background-color:rgb(155, 253, 248);
+    transition: all 0.4s;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.game__end--button:hover {
+    cursor: pointer;
+    border-color: rgb(75, 75, 75);
+    background-color: rgb(55, 190, 184);
+}
+
+.game__end--button:active {
+    top: 5px;
+}
+
+.game__result {
+    display: block;
+    background-color: white;
+    border: 5px solid rgb(119, 119, 119);
+    border-radius: 10px;
+    top: 25%;
+    position: fixed;
+    width: 70%;
+    height: 50%;
+}
+
+.game__result button {
+    position: absolute;
+    width: 40px;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.game__result button:hover {
+    cursor: pointer;
+}
+
+.game__result img {
+    width: 100%;
+    opacity: 0.7;
+}
+
+.game__result img:hover {
+    opacity: 1;
+}
+
+.game__result--closed {
+    display: none;
 }
 
 .footer {
