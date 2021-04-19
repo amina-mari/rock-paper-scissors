@@ -116,11 +116,11 @@ main {
     font-size: 20px;
 }
 
-.game__end {
+.game__scores {
     flex-basis: 100%;
 }
 
-.game__end--button {
+.game__scores--button {
     position: relative;
     width: 300px;
     height: 50px;
@@ -133,15 +133,70 @@ main {
     font-size: 20px;
 }
 
-.game__end--button:hover {
+.game__scores--button:hover {
     cursor: pointer;
     border-color: rgb(75, 75, 75);
     background-color: rgb(55, 190, 184);
 }
 
-.game__end--button:active {
+.game__scores--button:active {
     top: 5px;
 }
+
+.game__scores--div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    border: 5px solid rgb(119, 119, 119);
+    border-radius: 10px;
+    top: 12.5%;
+    position: fixed;
+    width: 70%;
+    height: 75%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.game__scores--div button {
+    position: absolute;
+    width: 40px;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    opacity: 0.7;
+}
+
+.game__scores--div button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.game__scores--div button img {
+    width: 100%;
+}
+
+.game__scores--div div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 200px;
+    border: 5px solid rgb(119, 119, 119);
+    border-radius: 10px;
+    background-color:rgb(255, 215, 163);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.game__scores--closed {
+    display: none;
+}
+
 
 .game__result {
     display: flex;
@@ -159,13 +214,14 @@ main {
     overflow-y: auto;
 }
 
-.game__result > p:first-child {
+.game__result > p {
     flex-basis: 100%;
     margin-bottom: 20px;
     font-size: 20px;
 }
 
 .game__result .versus {
+    flex-basis: 25%;
     font-size: 3rem;
     color: rgb(119, 119, 119);
     font-weight: bold;
@@ -179,19 +235,16 @@ main {
     background-color: transparent;
     border: none;
     outline: none;
+    opacity: 0.7;
 }
 
 .game__result button:hover {
     cursor: pointer;
+    opacity: 1;
 }
 
 .game__result button img {
     width: 100%;
-    opacity: 0.7;
-}
-
-.game__result button img:hover {
-    opacity: 1;
 }
 
 .game__result > div {

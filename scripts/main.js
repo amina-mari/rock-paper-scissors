@@ -92,14 +92,64 @@ function showWinLoseDraw(option, computerOption) {
     divGame.appendChild(matchResult);
 }
 
-// function showScores() {
-//     alert("You played " + matchNumber + " matches" + "\nYour final score was: " + score +
-//         "\nThe final computer score was: " + computerScore + "\nYou had " + draws + " draws");
-//     score = 0;
-//     computerScore = 0;
-//     matchNumber = 0;
-//     draws = 0;
-// }
+function showScores() {
+    if(divScores.classList.contains('game__scores--closed')){
+        divScores.classList.remove('game__scores--closed');
+    }
+    winsCount.textContent = score;
+    drawsCount.textContent = draws;
+    losesCount.textContent = computerScore;
+    divGame.appendChild(divScores);
+}
+
+let scoresButton = document.querySelector('.game__scores--button');
+
+scoresButton.addEventListener('mousedown', showScores);
+
+let divScores = document.createElement('div');
+divScores.classList.add('game__scores--div');
+
+let scoresCloseButton = document.createElement('button');
+let scoresCloseButtonImg = document.createElement('img');
+scoresCloseButtonImg.setAttribute('src', 'images/close.png');
+scoresCloseButton.appendChild(scoresCloseButtonImg);
+
+scoresCloseButton.addEventListener('mousedown', function() {
+    divScores.classList.add('game__scores--closed');
+});
+
+
+let divWins = document.createElement('div');
+let winsPara = document.createElement('p');
+winsPara.textContent = "Wins";
+let winsCount = document.createElement('p');
+
+divWins.appendChild(winsPara);
+divWins.appendChild(winsCount);
+
+
+let divDraws = document.createElement('div');
+let drawsPara = document.createElement('p');
+drawsPara.textContent = "Draws";
+let drawsCount = document.createElement('p');
+
+divDraws.appendChild(drawsPara);
+divDraws.appendChild(drawsCount);
+
+
+let divLoses = document.createElement('div');
+let losesPara = document.createElement('p');
+losesPara.textContent = "Loses";
+let losesCount = document.createElement('p');
+
+divLoses.appendChild(losesPara);
+divLoses.appendChild(losesCount);
+
+
+divScores.appendChild(scoresCloseButton);
+divScores.appendChild(divWins);
+divScores.appendChild(divDraws);
+divScores.appendChild(divLoses);
 
 let matchNumber = 0;
 let score = 0;
@@ -153,10 +203,15 @@ let paraVersus = document.createElement('p');
 paraVersus.classList.add('versus')
 paraVersus.textContent = "VS";
 
+matchResult.appendChild(closeButton)
 matchResult.appendChild(paraResult);
 matchResult.appendChild(divUserChoice);
 matchResult.appendChild(paraVersus);
 matchResult.appendChild(divCPUChoice);
+
+closeButton.addEventListener('click', function(event){
+    event.currentTarget.parentNode.classList.add('game__result--closed');
+})
 
 /*
 <div>
@@ -178,17 +233,13 @@ matchResult.appendChild(divCPUChoice);
 </div>
 */
 
-matchResult.appendChild(closeButton)
 
 // Event listener to close matchResult
 
-closeButton.addEventListener('click', function(event){
-    event.currentTarget.parentNode.classList.add('game__result--closed');
-})
 
 let buttons = document.querySelectorAll('.game__button')
  
-buttons.forEach(button => button.addEventListener('mousedown', rockPaperScissors, {capture:true}));
+buttons.forEach(button => button.addEventListener('mousedown', rockPaperScissors));
 
 function rockPaperScissors(event) {
     matchNumber++;
