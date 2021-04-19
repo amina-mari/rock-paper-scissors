@@ -69,6 +69,7 @@ main {
     position: relative;
     width: 200px;
     height: 200px;
+    margin-bottom: 20px;
     border: 5px solid rgb(119, 119, 119);
     border-radius: 10px;
     outline: none;
@@ -117,7 +118,6 @@ main {
 
 .game__end {
     flex-basis: 100%;
-    margin-top: 50px;
 }
 
 .game__end--button {
@@ -144,14 +144,31 @@ main {
 }
 
 .game__result {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: white;
     border: 5px solid rgb(119, 119, 119);
     border-radius: 10px;
-    top: 25%;
+    top: 12.5%;
     position: fixed;
     width: 70%;
-    height: 50%;
+    height: 75%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.game__result > p:first-child {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.game__result .versus {
+    font-size: 3rem;
+    color: rgb(119, 119, 119);
+    font-weight: bold;
 }
 
 .game__result button {
@@ -168,13 +185,36 @@ main {
     cursor: pointer;
 }
 
-.game__result img {
+.game__result button img {
     width: 100%;
     opacity: 0.7;
 }
 
-.game__result img:hover {
+.game__result button img:hover {
     opacity: 1;
+}
+
+.game__result > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 250px;
+    height: 250px;
+    border: 5px solid rgb(119, 119, 119);
+    border-radius: 10px;
+    outline: none;
+    background-color:rgb(255, 215, 163);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.game__result div p {
+    font-size: 20px;
+}
+
+.game__result img {
+    width: 100px;
 }
 
 .game__result--closed {

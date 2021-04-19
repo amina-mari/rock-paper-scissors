@@ -10,19 +10,9 @@
             - Ask if the user want to play again
                 - If it is true, go back to line 2
                  
-
-            
-- Inform the user how to play the game 
-    - Ask the user to enter rock, paper or scissors
-        - If the user enter a valid option
-            - Add 1 to number of matches
-            - Make a random choice to beat the user choice
-            - Show the result
-                - If the user wins, add 1 to the score
-            - Ask if the user want to play again
-                - If the user want, go back to line 2
-                - If not, show score and end the program    
-        - Else, ask the user to enter a valid option and go back to line 3
+    Future Tasks: 
+        - Translate to Portuguese
+        - Add Multiplayer Mode
 */
 
 
@@ -34,57 +24,71 @@
 function showWinLoseDraw(option, computerOption) {
     
     if (option == 1) {
+        figcaptionUserChoice.textContent = "Rock";
+        imgUserChoice.setAttribute('src', "images/icons8-rock-80.png");
         if (computerOption == 2) {
+            figcaptionCPUChoice.textContent = "Paper";
+            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
             paraResult.textContent = 'Oh no, you lose';
-            //alert("Oh no, you lose.")
             computerScore++;
         }
         else if (computerOption == 3) {
+            figcaptionCPUChoice.textContent = "Scissors";
+            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
             paraResult.textContent = 'Yay! You won!';
-            //alert("Yay! You won!")
             score++;
         }
         else {
+            figcaptionCPUChoice.textContent = "Rock";
+            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
             paraResult.textContent = 'It\'s a draw';
-            //alert("It's a draw")
             draws++;
         }
     }
     else if (option == 2) {
+        figcaptionUserChoice.textContent = "Paper";
+        imgUserChoice.setAttribute('src', "images/icons8-paper-64.png");
         if (computerOption == 1) {
+            figcaptionCPUChoice.textContent = "Rock";
+            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
             paraResult.textContent = 'Yay! You won!';
-            //alert("Yay! You won!")
             score++;
         }
         else if (computerOption == 3) {
+            figcaptionCPUChoice.textContent = "Scissors";
+            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
             paraResult.textContent = 'Oh no, you lose';
-            //alert("Oh no, you lose.")
             computerScore++;
         }
         else {
+            figcaptionCPUChoice.textContent = "Paper";
+            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
             paraResult.textContent = 'It\'s a draw';
-            //alert("It's a draw")
             draws++;
         }
     }
     else {
+        figcaptionUserChoice.textContent = "Scissors";
+        imgUserChoice.setAttribute('src', "images/icons8-cutting-96.png");
         if (computerOption == 1) {
+            figcaptionCPUChoice.textContent = "Rock";
+            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
             paraResult.textContent = 'Oh no, you lose';
-            //alert("Oh no, you lose.")
             computerScore++;
         }
         else if (computerOption == 2) {
+            figcaptionCPUChoice.textContent = "Paper";
+            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
             paraResult.textContent = 'Yay! You won!';
-            //alert("Yay! You won!")
             score++;
         }
         else {
+            figcaptionCPUChoice.textContent = "Scissors";
+            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
             paraResult.textContent = 'It\'s a draw';
-            //alert("It's  a draw")
             draws++;
         }
     }
-    matchResult.appendChild(paraResult);
     divGame.appendChild(matchResult);
 }
 
@@ -114,6 +118,65 @@ let closeButton = document.createElement('button');
 let closeImg = document.createElement("img")
 closeImg.setAttribute('src', 'images/close.png');
 closeButton.appendChild(closeImg);
+
+let divUserChoice = document.createElement('div');
+let paraUserChoice = document.createElement('p');
+paraUserChoice.textContent = "User Choice";
+divUserChoice.appendChild(paraUserChoice);
+
+
+let figUserChoice = document.createElement('figure');
+let imgUserChoice = document.createElement('img');
+let figcaptionUserChoice = document.createElement('figcaption');
+figUserChoice.appendChild(imgUserChoice);
+figUserChoice.appendChild(figcaptionUserChoice);
+
+divUserChoice.appendChild(figUserChoice);
+
+
+/* img src and figcaption textContent is setted in the showWinLoseDraw function */
+
+let divCPUChoice = document.createElement('div');
+let paraCPUChoice = document.createElement('p');
+paraCPUChoice.textContent = "Computer Choice";
+divCPUChoice.appendChild(paraCPUChoice);
+
+let figCPUChoice = document.createElement('figure');
+let imgCPUChoice = document.createElement('img');
+let figcaptionCPUChoice = document.createElement('figcaption');
+figCPUChoice.appendChild(imgCPUChoice);
+figCPUChoice.appendChild(figcaptionCPUChoice);
+
+divCPUChoice.appendChild(figCPUChoice);
+
+let paraVersus = document.createElement('p');
+paraVersus.classList.add('versus')
+paraVersus.textContent = "VS";
+
+matchResult.appendChild(paraResult);
+matchResult.appendChild(divUserChoice);
+matchResult.appendChild(paraVersus);
+matchResult.appendChild(divCPUChoice);
+
+/*
+<div>
+    <p>User Choice</p>
+    <figure>
+        <img>
+        <figcation></figcaption>
+    </figure>
+</div>
+
+<p>VS</p>
+
+<div>
+    <p>Computer Choice</p>
+    <figure>
+        <img>
+        <figcation></figcaption>
+    </figure>
+</div>
+*/
 
 matchResult.appendChild(closeButton)
 
