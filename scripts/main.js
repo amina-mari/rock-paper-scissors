@@ -21,87 +21,6 @@
 //     alert("Computer choosed " + arrayOptions[computerOption - 1]);
 // }
 
-function showWinLoseDraw(option, computerOption) {
-    
-    if (option == 1) {
-        figcaptionUserChoice.textContent = "Rock";
-        imgUserChoice.setAttribute('src', "images/icons8-rock-80.png");
-        if (computerOption == 2) {
-            figcaptionCPUChoice.textContent = "Paper";
-            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
-            paraResult.textContent = 'Oh no, you lose';
-            computerScore++;
-        }
-        else if (computerOption == 3) {
-            figcaptionCPUChoice.textContent = "Scissors";
-            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
-            paraResult.textContent = 'Yay! You won!';
-            score++;
-        }
-        else {
-            figcaptionCPUChoice.textContent = "Rock";
-            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
-            paraResult.textContent = 'It\'s a draw';
-            draws++;
-        }
-    }
-    else if (option == 2) {
-        figcaptionUserChoice.textContent = "Paper";
-        imgUserChoice.setAttribute('src', "images/icons8-paper-64.png");
-        if (computerOption == 1) {
-            figcaptionCPUChoice.textContent = "Rock";
-            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
-            paraResult.textContent = 'Yay! You won!';
-            score++;
-        }
-        else if (computerOption == 3) {
-            figcaptionCPUChoice.textContent = "Scissors";
-            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
-            paraResult.textContent = 'Oh no, you lose';
-            computerScore++;
-        }
-        else {
-            figcaptionCPUChoice.textContent = "Paper";
-            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
-            paraResult.textContent = 'It\'s a draw';
-            draws++;
-        }
-    }
-    else {
-        figcaptionUserChoice.textContent = "Scissors";
-        imgUserChoice.setAttribute('src', "images/icons8-cutting-96.png");
-        if (computerOption == 1) {
-            figcaptionCPUChoice.textContent = "Rock";
-            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
-            paraResult.textContent = 'Oh no, you lose';
-            computerScore++;
-        }
-        else if (computerOption == 2) {
-            figcaptionCPUChoice.textContent = "Paper";
-            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
-            paraResult.textContent = 'Yay! You won!';
-            score++;
-        }
-        else {
-            figcaptionCPUChoice.textContent = "Scissors";
-            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
-            paraResult.textContent = 'It\'s a draw';
-            draws++;
-        }
-    }
-    divGame.appendChild(matchResult);
-}
-
-function showScores() {
-    if(divScores.classList.contains('game__scores--closed')){
-        divScores.classList.remove('game__scores--closed');
-    }
-    winsCount.textContent = score;
-    drawsCount.textContent = draws;
-    losesCount.textContent = computerScore;
-    divGame.appendChild(divScores);
-}
-
 let scoresButton = document.querySelector('.game__scores--button');
 
 scoresButton.addEventListener('mousedown', showScores);
@@ -233,8 +152,86 @@ closeButton.addEventListener('click', function(event){
 </div>
 */
 
+function showWinLoseDraw(option, computerOption) {
+    
+    if (option == 1) {
+        figcaptionUserChoice.textContent = "Rock";
+        imgUserChoice.setAttribute('src', "images/icons8-rock-80.png");
+        if (computerOption == 2) {
+            figcaptionCPUChoice.textContent = "Paper";
+            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
+            paraResult.textContent = 'Oh no, you lose';
+            computerScore++;
+        }
+        else if (computerOption == 3) {
+            figcaptionCPUChoice.textContent = "Scissors";
+            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
+            paraResult.textContent = 'Yay! You won!';
+            score++;
+        }
+        else {
+            figcaptionCPUChoice.textContent = "Rock";
+            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
+            paraResult.textContent = 'It\'s a draw';
+            draws++;
+        }
+    }
+    else if (option == 2) {
+        figcaptionUserChoice.textContent = "Paper";
+        imgUserChoice.setAttribute('src', "images/icons8-paper-64.png");
+        if (computerOption == 1) {
+            figcaptionCPUChoice.textContent = "Rock";
+            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
+            paraResult.textContent = 'Yay! You won!';
+            score++;
+        }
+        else if (computerOption == 3) {
+            figcaptionCPUChoice.textContent = "Scissors";
+            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
+            paraResult.textContent = 'Oh no, you lose';
+            computerScore++;
+        }
+        else {
+            figcaptionCPUChoice.textContent = "Paper";
+            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
+            paraResult.textContent = 'It\'s a draw';
+            draws++;
+        }
+    }
+    else {
+        figcaptionUserChoice.textContent = "Scissors";
+        imgUserChoice.setAttribute('src', "images/icons8-cutting-96.png");
+        if (computerOption == 1) {
+            figcaptionCPUChoice.textContent = "Rock";
+            imgCPUChoice.setAttribute('src', "images/icons8-rock-80.png");
+            paraResult.textContent = 'Oh no, you lose';
+            computerScore++;
+        }
+        else if (computerOption == 2) {
+            figcaptionCPUChoice.textContent = "Paper";
+            imgCPUChoice.setAttribute('src', "images/icons8-paper-64.png");
+            paraResult.textContent = 'Yay! You won!';
+            score++;
+        }
+        else {
+            figcaptionCPUChoice.textContent = "Scissors";
+            imgCPUChoice.setAttribute('src', "images/icons8-cutting-96.png");
+            paraResult.textContent = 'It\'s a draw';
+            draws++;
+        }
+    }
+    divGame.appendChild(matchResult);
+}
 
-// Event listener to close matchResult
+function showScores() {
+    if(divScores.classList.contains('game__scores--closed')){
+        divScores.classList.remove('game__scores--closed');
+    }
+    winsCount.textContent = score;
+    drawsCount.textContent = draws;
+    losesCount.textContent = computerScore;
+    divGame.appendChild(divScores);
+}
 
 
 let buttons = document.querySelectorAll('.game__button')
